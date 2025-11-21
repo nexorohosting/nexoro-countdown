@@ -32,57 +32,33 @@ const countdownTimer = setInterval(function() {
         document.querySelector(".info-text").innerText = "Log in to your dashboard now.";
     }
 }, 1000);
-// --- WAITLIST FORM HANDLING ---
+// --- WAITLIST VISUALS ONLY ---
+// The data sending is now handled by the HTML <form> tag directly.
+
+var submitted = false;
 
 const waitlistForm = document.getElementById('waitlistForm');
 const successMessage = document.getElementById('successMessage');
 
-// CONFIGURATION: PASTE YOUR GOOGLE FORM DATA HERE
-// 1. The URL ending in /formResponse (replace /viewform with /formResponse if needed)
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfdbUvkuT2M0mweylTxjPYrVcCyYns0NnyatLDFha6ooRvIRw/viewform?usp=pp_url&entry.1423420749=testuser&entry.2029535889=test@email.com'; 
-
-// 2. The Entry IDs you found in Phase 2
-const ENTRY_ID_USERNAME = 'entry.123456789'; // Replace with your actual number
-const ENTRY_ID_EMAIL    = 'entry.987654321'; // Replace with your actual number
-
 if (waitlistForm) {
-    waitlistForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Stop page reload
-
-        const user = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-        const submitBtn = waitlistForm.querySelector('button');
-
-        // Visual: Change button to "Sending..."
-        submitBtn.innerText = 'Sending...';
-        submitBtn.style.opacity = '0.7';
-
-        // Create the data object for Google Forms
-        const formData = new FormData();
-        formData.append(ENTRY_ID_USERNAME, user);
-        formData.append(ENTRY_ID_EMAIL, email);
-
-        // Send data using fetch
-        // Note: mode: 'no-cors' is required for Google Forms. 
-        // It means we won't get a "200 OK" message back, but the data WILL send.
-        fetch(GOOGLE_FORM_URL, {
-            method: 'POST',
-            mode: 'no-cors', 
-            body: formData
-        }).then(() => {
-            // Success Action
-            console.log("Data sent to Google Sheet!");
-            
+    waitlistForm.addEventListener('submit', function() {
+        // When the user clicks submit, we wait a tiny bit for the data to leave
+        // then we switch the visuals.
+        submitted = true;
+        
+        setTimeout(function() {
+            // 1. Hide the form
             waitlistForm.style.display = 'none';
-            successMessage.classList.remove('hidden');
             
-            // Hide promotional text for a cleaner look
-            document.querySelector('.promo-banner').style.display = 'none';
-            document.querySelector('.subtext').style.display = 'none';
+            // 2. Show success message
+            successMessage.classList.remove('hidden');
 
-        }).catch((error) => {
-            console.error('Error!', error.message);
-            submitBtn.innerText = 'Error. Try again.';
-        });
+            // 3. Hide promo text
+            const promo = document.querySelector('.promo-banner');
+            const sub = document.querySelector('.subtext');
+            if(promo) promo.style.display = 'none';
+            if(sub) sub.style.display = 'none';
+            
+        }, 500); // 0.5 second delay to ensure smoother transition
     });
 }
