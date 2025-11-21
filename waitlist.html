@@ -21,23 +21,32 @@
 
             <p class="subtext">Enter your details below to be notified when we launch.</p>
 
-            <form id="waitlistForm">
-                <div class="input-group">
-                    <label for="username">Username (Discord/Minecraft)</label>
-                    <input type="text" id="username" placeholder="e.g. STKGamer" required>
-                </div>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
 
-                <div class="input-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="you@example.com" required>
-                </div>
+<form id="waitlistForm" 
+      action="'https://docs.google.com/forms/d/e/1FAIpQLSfdbUvkuT2M0mweylTxjPYrVcCyYns0NnyatLDFha6ooRvIRw/viewform?usp=pp_url&entry.1423420749=testuser&entry.2029535889=test@email.com';" 
+      method="POST" 
+      target="hidden_iframe"
+      onsubmit="submitted=true;">
 
-                <button type="submit" class="btn discord-btn full-width">Join the List</button>
-            </form>
+    <div class="input-group">
+        <label for="username">Username (Discord/Minecraft)</label>
+        <input type="text" name="entry.123456789" placeholder="e.g. STKGamer" required>
+    </div>
 
-            <div id="successMessage" class="hidden">
-                <h3>✅ You're on the list!</h3>
-                <p>Keep an eye on your email. We launch Dec 31st.</p>
+    <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="entry.987654321" placeholder="you@example.com" required>
+    </div>
+
+    <button type="submit" class="btn discord-btn full-width">Join the List</button>
+</form>
+
+<div id="successMessage" class="hidden">
+    <h3>✅ You're on the list!</h3>
+    <p>Keep an eye on your email. We launch Dec 31st.</p>
+</div>
+
             </div>
 
             <br>
