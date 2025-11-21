@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Waitlist - Nexoro Hosting</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <div class="container">
+        <div class="waitlist-box">
+            <h1>Secure Your <span class="highlight">Spot</span></h1>
+            
+            <div class="promo-banner">
+                <p>🔥 <strong>The first 15 users</strong> will receive a code for <strong>50% OFF</strong> any hosting plan!</p>
+            </div>
+
+            <p class="subtext">Enter your details below to be notified when we launch.</p>
+
+            <form id="waitlistForm">
+                <div class="input-group">
+                    <label for="username">Username (Discord/Minecraft)</label>
+                    <input type="text" id="username" placeholder="e.g. STKGamer" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+
+                <button type="submit" class="btn discord-btn full-width">Join the List</button>
+            </form>
+
+            <div id="successMessage" class="hidden">
+                <h3>✅ You're on the list!</h3>
+                <p>Keep an eye on your email. We launch Dec 31st.</p>
+            </div>
+
+            <br>
+            <a href="index.html" class="back-link">← Back to Countdown</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

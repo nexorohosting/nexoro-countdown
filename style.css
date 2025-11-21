@@ -1,0 +1,241 @@
+/* Reset and Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Variables for easy color changing */
+:root {
+    --primary-color: #00ff88; /* Neon Green for Nexoro Vibe */
+    --secondary-color: #00c3ff; /* Tech Blue */
+    --bg-dark: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Effect - Simulating a server glow */
+.background-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.15), transparent 60%);
+    z-index: -1;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+    padding: 2rem;
+}
+
+/* Logo Styling */
+.logo-area h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+    text-shadow: 0 0 15px var(--primary-color);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 3rem;
+}
+
+/* Countdown Container */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    min-width: 100px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.time-box span {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.time-box small {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.discord-btn {
+    background-color: #5865F2; /* Discord Color */
+    color: white;
+}
+
+.discord-btn:hover {
+    background-color: #4752c4;
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.5);
+}
+
+.waitlist-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.waitlist-btn:hover {
+    background-color: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+footer {
+    margin-top: 4rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .logo-area h1 { font-size: 2.5rem; }
+    .time-box { min-width: 80px; padding: 1rem; }
+    .time-box span { font-size: 2rem; }
+}
+/* --- WAITLIST PAGE STYLES --- */
+
+.waitlist-box {
+    background: rgba(15, 23, 42, 0.6); /* Darker background for readability */
+    backdrop-filter: blur(15px);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* The Promo Banner */
+.promo-banner {
+    background: rgba(255, 180, 0, 0.15); /* Gold tint */
+    border: 1px solid #ffb400;
+    color: #ffb400;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.subtext {
+    margin-bottom: 2rem;
+    color: #aaa;
+}
+
+/* Form Inputs */
+.input-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+/* Button Adjustment */
+.full-width {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Back Link */
+.back-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+.back-link:hover {
+    color: white;
+}
+
+/* Success State */
+.hidden {
+    display: none;
+}
+#successMessage {
+    margin-top: 2rem;
+    color: var(--primary-color);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
