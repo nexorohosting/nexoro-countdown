@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsorships | Nexoro Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-cyan: #00f3ff;
+            --accent-purple: #bf00ff;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 10%; background: rgba(0,0,0,0.9);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+        }
+        .logo { font-family: 'Orbitron'; font-weight: 900; color: #fff; text-decoration: none; font-size: 1.5rem; }
+        .logo span { color: var(--accent-cyan); }
+
+        /* --- HERO --- */
+        .sponsor-hero {
+            padding: 8rem 10% 4rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(191, 0, 255, 0.08) 0%, transparent 70%);
+        }
+        .sponsor-hero h1 { font-family: 'Orbitron'; font-size: 3.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 4px; }
+        .sponsor-hero span { color: var(--accent-purple); }
+
+        /* --- REQUIREMENTS GRID --- */
+        .req-section { padding: 4rem 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        
+        .req-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(191, 0, 255, 0.2);
+            padding: 2.5rem;
+            border-radius: 12px;
+            position: relative;
+            transition: 0.3s;
+        }
+        .req-card:hover { border-color: var(--accent-purple); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(191, 0, 255, 0.1); }
+        .req-card h3 { font-family: 'Orbitron'; color: var(--accent-purple); margin-bottom: 1rem; }
+
+        /* --- APPLICATION FORM --- */
+        .apply-container {
+            max-width: 900px;
+            margin: 0 auto 10rem;
+            background: #0a0a0a;
+            padding: 4rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem; }
+        
+        .form-group { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+        .form-group label { font-family: 'Orbitron'; font-size: 0.7rem; color: var(--accent-purple); margin-bottom: 8px; text-transform: uppercase; }
+        
+        input, select, textarea {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px;
+            color: white;
+            border-radius: 4px;
+            outline: none;
+        }
+        input:focus { border-color: var(--accent-purple); }
+
+        .btn-apply {
+            grid-column: span 2;
+            padding: 20px;
+            background: var(--accent-purple);
+            color: white;
+            border: none;
+            font-family: 'Orbitron';
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .btn-apply:hover { filter: brightness(1.2); box-shadow: 0 0 25px rgba(191, 0, 255, 0.4); }
+
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .btn-apply { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NEXORO<span>.</span></a>
+        <div style="display:flex; gap: 20px;">
+            <a href="index.html" style="color:white; text-decoration:none;">Home</a>
+            <a href="affiliate.html" style="color:white; text-decoration:none;">Affiliates</a>
+        </div>
+    </nav>
+
+    <header class="sponsor-hero">
+        <h1>Fuel Your <span>Content</span></h1>
+        <p>Are you a Bedrock creator, marketplace team, or event organizer? <br>Nexoro provides the performance; you provide the entertainment.</p>
+    </header>
+
+    <section class="req-section">
+        <div class="req-card">
+            <h3>Content Creators</h3>
+            <p>For YouTubers and Streamers. Minimum 2,000 subscribers/followers and active Minecraft Bedrock content.</p>
+        </div>
+        <div class="req-card">
+            <h3>Community Teams</h3>
+            <p>For map makers, add-on developers, and marketplace teams. Build your projects on stable, 24/7 hardware.</p>
+        </div>
+        <div class="req-card">
+            <h3>Event Hosts</h3>
+            <p>One-off sponsorships for tournaments, SMP launches, or community gatherings. High-spec temporary nodes.</p>
+        </div>
+    </section>
+
+    <div class="apply-container">
+        <h2 style="font-family: 'Orbitron'; text-align: center;">Partnership Application</h2>
+        <form class="form-grid">
+            <div class="form-group">
+                <label>Primary Platform</label>
+                <select>
+                    <option>YouTube</option>
+                    <option>Twitch</option>
+                    <option>TikTok</option>
+                    <option>Marketplace Team</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Channel/Team Name</label>
+                <input type="text" placeholder="Nexoro Studios">
+            </div>
+            <div class="form-group">
+                <label>Link to Content</label>
+                <input type="url" placeholder="https://...">
+            </div>
+            <div class="form-group">
+                <label>Average Monthly Views</label>
+                <input type="number" placeholder="5000">
+            </div>
+            <div class="form-group" style="grid-column: span 2;">
+                <label>Why should we partner?</label>
+                <textarea rows="4" placeholder="Tell us about your project and what server specs you need..."></textarea>
+            </div>
+            <button type="submit" class="btn-apply">Submit Application</button>
+        </form>
+    </div>
+
+</body>
+</html>

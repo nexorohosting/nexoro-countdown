@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center | Nexoro Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-cyan: #00f3ff;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 10%; background: rgba(0,0,0,0.9);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+        }
+        .logo { font-family: 'Orbitron'; font-weight: 900; color: #fff; text-decoration: none; font-size: 1.5rem; }
+        .logo span { color: var(--accent-cyan); }
+
+        /* --- SEARCH HERO --- */
+        .support-hero {
+            padding: 5rem 10%;
+            text-align: center;
+            background: radial-gradient(circle at 50% 100%, rgba(0, 243, 255, 0.08) 0%, transparent 60%);
+        }
+        .support-hero h1 { font-family: 'Orbitron'; font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 18px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+        .search-bar input:focus { border-color: var(--accent-cyan); box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); }
+
+        /* --- CATEGORIES --- */
+        .kb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 10%;
+        }
+        .kb-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .kb-card:hover { border-color: var(--accent-cyan); transform: translateY(-5px); }
+        .kb-card h3 { font-family: 'Orbitron'; font-size: 1.1rem; margin-bottom: 10px; color: var(--accent-cyan); }
+        .kb-card p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 15px; }
+        .article-count { font-size: 0.8rem; color: var(--accent-cyan); text-transform: uppercase; font-weight: bold; }
+
+        /* --- DISCORD CTA --- */
+        .discord-footer {
+            margin: 4rem 10%;
+            background: linear-gradient(90deg, #5865F2, #4752C4);
+            padding: 3rem;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .discord-text h2 { font-family: 'Orbitron'; margin-bottom: 5px; }
+        .btn-discord {
+            background: white;
+            color: #5865F2;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Orbitron';
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NEXORO<span>.</span></a>
+        <div class="nav-links" style="display:flex; gap: 20px;">
+            <a href="index.html" style="color:white; text-decoration:none;">Home</a>
+            <a href="pricing.html" style="color:white; text-decoration:none;">Pricing</a>
+        </div>
+    </nav>
+
+    <section class="support-hero">
+        <h1>How can we help?</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for 'How to upload world' or 'Bot setup'...">
+        </div>
+    </section>
+
+    <main class="kb-grid">
+        <a href="#" class="kb-card">
+            <h3>Getting Started</h3>
+            <p>New to Nexoro? Learn how to deploy your first Bedrock server in 60 seconds.</p>
+            <span class="article-count">8 Articles</span>
+        </a>
+        <a href="#" class="kb-card">
+            <h3>Server Management</h3>
+            <p>Tutorials on using the Advanced Control Panel, FTP, and automated backups.</p>
+            <span class="article-count">12 Articles</span>
+        </a>
+        <a href="#" class="kb-card">
+            <h3>NEXORAbot Guide</h3>
+            <p>Connect your server to Discord and master remote management commands.</p>
+            <span class="article-count">5 Articles</span>
+        </a>
+        <a href="#" class="kb-card">
+            <h3>Billing & Plans</h3>
+            <p>Manage your subscription, upgrade tiers, or update payment methods.</p>
+            <span class="article-count">4 Articles</span>
+        </a>
+    </main>
+
+    <div class="discord-footer">
+        <div class="discord-text">
+            <h2>Can't find the answer?</h2>
+            <p>Our community and staff are active 24/7 on Discord.</p>
+        </div>
+        <a href="#" class="btn-discord">JOIN OUR DISCORD</a>
+    </div>
+
+</body>
+</html>

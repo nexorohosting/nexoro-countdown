@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Center | Nexoro Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-cyan: #00f3ff;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 10%; background: rgba(0,0,0,0.9);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+        }
+        .logo { font-family: 'Orbitron'; font-weight: 900; color: #fff; text-decoration: none; font-size: 1.5rem; }
+        .logo span { color: var(--accent-cyan); }
+
+        /* --- LEGAL LAYOUT --- */
+        .legal-wrapper {
+            display: flex;
+            max-width: 1200px;
+            margin: 4rem auto;
+            gap: 3rem;
+            padding: 0 5%;
+        }
+
+        /* Sidebar Navigation */
+        .legal-nav {
+            width: 250px;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .legal-nav h3 { font-family: 'Orbitron'; font-size: 0.8rem; color: var(--accent-cyan); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        .nav-link {
+            display: block;
+            padding: 12px 0;
+            color: var(--text-dim);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover, .nav-link.active { color: var(--accent-cyan); padding-left: 10px; }
+
+        .nav-link.disabled { opacity: 0.4; cursor: not-allowed; }
+        .nav-link.disabled:hover { color: var(--text-dim); padding-left: 0; }
+
+        /* Content Area */
+        .legal-content { flex: 1; background: var(--card-bg); padding: 3rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        
+        .legal-section { display: none; }
+        .legal-section.active { display: block; }
+
+        h2 { font-family: 'Orbitron'; margin-bottom: 2rem; color: var(--accent-cyan); }
+        h4 { margin-top: 2rem; margin-bottom: 0.5rem; color: #fff; }
+        p { color: var(--text-dim); margin-bottom: 1rem; font-size: 0.95rem; }
+        ul { margin-left: 20px; color: var(--text-dim); margin-bottom: 1.5rem; }
+        li { margin-bottom: 8px; }
+
+        @media (max-width: 850px) {
+            .legal-wrapper { flex-direction: column; }
+            .legal-nav { width: 100%; position: relative; top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NEXORO<span>.</span></a>
+        <div style="display:flex; gap: 20px;">
+            <a href="index.html" style="color:white; text-decoration:none;">Home</a>
+        </div>
+    </nav>
+
+    <div class="legal-wrapper">
+        <aside class="legal-nav">
+            <h3>Documents</h3>
+            <a href="#" class="nav-link active" onclick="showSection('tos')">Terms of Service</a>
+            <a href="#" class="nav-link" onclick="showSection('privacy')">Privacy Policy</a>
+            <a href="#" class="nav-link" onclick="showSection('sla')">Service Level Agreement</a>
+            <a href="#" class="nav-link disabled">Affiliates (Coming Soon)</a>
+        </aside>
+
+        <main class="legal-content">
+            
+            <section id="tos" class="legal-section active">
+                <h2>Terms of Service</h2>
+                <p>Last Updated: December 2025</p>
+                <h4>1. Acceptance of Terms</h4>
+                <p>By accessing Nexoro Hosting, you agree to comply with our usage policies. We provide specialized Minecraft Bedrock infrastructure subject to these terms.</p>
+                <h4>2. Prohibited Content</h4>
+                <p>Users may not use Nexoro services for:</p>
+                <ul>
+                    <li>DDoS attacks or network interference.</li>
+                    <li>Distribution of malicious software.</li>
+                    <li>Hosting content that violates international copyright laws.</li>
+                </ul>
+            </section>
+
+            <section id="privacy" class="legal-section">
+                <h2>Privacy Policy</h2>
+                <h4>1. Data Collection</h4>
+                <p>We collect minimal data necessary for server management and billing, including email addresses and server configuration logs.</p>
+                <h4>2. Payment Security</h4>
+                <p>All payments are processed through Stripe or PayPal. Nexoro does not store credit card details on our local servers.</p>
+            </section>
+
+            <section id="sla" class="legal-section">
+                <h2>Service Level Agreement</h2>
+                <h4>1. Uptime Guarantee</h4>
+                <p>Nexoro guarantees a 99.9% monthly uptime for all Pro and Community tier servers.</p>
+                <h4>2. Compensation</h4>
+                <p>In the event of unplanned downtime exceeding the guarantee, users may be eligible for service credits applied to their next billing cycle.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Remove active class from all links and sections
+            document.querySelectorAll('.legal-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            
+            // Add active class to selected
+            document.getElementById(sectionId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

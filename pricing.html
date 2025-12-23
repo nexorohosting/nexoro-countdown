@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Nexoro Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --accent-cyan: #00f3ff;
+            --accent-purple: #9d00ff; /* Added for Pro tier distinction */
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --font-display: 'Orbitron', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 40%);
+        }
+
+        /* --- NAVIGATION (Reused from Home) --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 10%; background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+        }
+        .logo { font-family: var(--font-display); font-weight: 900; color: #fff; text-decoration: none; font-size: 1.5rem; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links a { color: var(--text-main); text-decoration: none; margin-left: 2rem; font-size: 0.9rem; }
+
+        /* --- PRICING HEADER --- */
+        .pricing-header {
+            text-align: center;
+            padding: 5rem 10% 3rem;
+        }
+        .pricing-header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .pricing-header p { color: var(--text-dim); font-size: 1.1rem; }
+
+        /* --- PRICING GRID --- */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2rem;
+            padding: 2rem 10% 5rem;
+            flex-wrap: wrap;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            width: 350px;
+            text-align: center;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-card:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .price-card.featured {
+            border: 1px solid var(--accent-cyan);
+            background: linear-gradient(180deg, rgba(0, 243, 255, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+            position: relative;
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-cyan);
+            color: #000;
+            padding: 4px 15px;
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        .plan-name {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+        }
+        .plan-price span { font-size: 1rem; color: var(--text-dim); font-weight: 400; }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 3rem;
+            flex-grow: 1;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            color: var(--text-dim);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--accent-cyan);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .btn-plan {
+            display: block;
+            padding: 15px;
+            background: transparent;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .featured .btn-plan {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            color: #000;
+        }
+
+        .btn-plan:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .featured .btn-plan:hover {
+            background: transparent;
+            color: var(--accent-cyan);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container { padding: 2rem 5%; }
+            .price-card { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NEXORO<span>.</span></a>
+        <div class="nav-links">
+            <a href="index.html#features">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Support</a>
+        </div>
+    </nav>
+
+    <header class="pricing-header">
+        <h1>Select Your Power</h1>
+        <p>Transparent pricing for creators of all sizes.</p>
+    </header>
+
+    <main class="pricing-container">
+        
+        <div class="price-card">
+            <div class="plan-name">Discovery</div>
+            <div class="plan-price">$0<span>/mo</span></div>
+            <ul class="feature-list">
+                <li>2GB RAM</li>
+                <li>Docker Isolated</li>
+                <li>Standard Support</li>
+                <li>Web Control Panel</li>
+                <li>24-Hour Trial Period</li>
+            </ul>
+            <a href="#" class="btn-plan">Start Trial</a>
+        </div>
+
+        <div class="price-card featured">
+            <div class="featured-tag">MOST POPULAR</div>
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">$8<span>/mo</span></div>
+            <ul class="feature-list">
+                <li>8GB RAM</li>
+                <li>Unmetered Storage</li>
+                <li>Priority Support</li>
+                <li>Full NEXORAbot Integration</li>
+                <li>Automated Backups</li>
+                <li>Global Edge Locations</li>
+            </ul>
+            <a href="#" class="btn-plan">Deploy Now</a>
+        </div>
+
+        <div class="price-card">
+            <div class="plan-name">Community</div>
+            <div class="plan-price">$20<span>/mo</span></div>
+            <ul class="feature-list">
+                <li>16GB+ RAM</li>
+                <li>Dedicated CPU Threads</li>
+                <li>White-label Branding</li>
+                <li>Direct Dev Support</li>
+                <li>Custom Plugin Support</li>
+            </ul>
+            <a href="#" class="btn-plan">Contact Sales</a>
+        </div>
+
+    </main>
+
+</body>
+</html>

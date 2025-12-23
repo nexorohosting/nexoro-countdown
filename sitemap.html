@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Nexoro Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-cyan: #00f3ff;
+            --text-main: #ffffff;
+            --text-dim: #8e8e93;
+            --card-bg: rgba(255, 255, 255, 0.02);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif;
+            background-image: linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .container { max-width: 1000px; margin: 5rem auto; padding: 0 5%; }
+
+        header { text-align: center; margin-bottom: 4rem; }
+        header h1 { font-family: 'Orbitron'; font-size: 2.5rem; letter-spacing: 4px; color: var(--accent-cyan); }
+        header p { color: var(--text-dim); margin-top: 10px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+
+        /* --- INDEX GRID --- */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .dir-category {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .dir-category h2 {
+            font-family: 'Orbitron';
+            font-size: 0.9rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .links-list { list-style: none; }
+        .links-list li { margin-bottom: 12px; }
+
+        .links-list a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .links-list a::before {
+            content: ">";
+            margin-right: 10px;
+            color: var(--accent-cyan);
+            font-family: 'Orbitron';
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .links-list a:hover { color: #fff; padding-left: 5px; }
+        .links-list a:hover::before { opacity: 1; }
+
+        .status-tag {
+            font-size: 0.6rem;
+            background: rgba(0, 243, 255, 0.1);
+            color: var(--accent-cyan);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; margin-top: 5rem; color: #333; font-family: 'Orbitron'; font-size: 0.7rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>SYSTEM INDEX</h1>
+            <p>Nexoro Hosting Global Directory</p>
+        </header>
+
+        <div class="directory-grid">
+            <div class="dir-category">
+                <h2>Platform</h2>
+                <ul class="links-list">
+                    <li><a href="index.html">Main Terminal (Home)</a></li>
+                    <li><a href="pricing.html">Service Plans (Pricing)</a></li>
+                    <li><a href="about.html">Architecture (About Us)</a></li>
+                </ul>
+            </div>
+
+            <div class="dir-category">
+                <h2>Ecosystem</h2>
+                <ul class="links-list">
+                    <li><a href="affiliate.html">Affiliate Portal</a></li>
+                    <li><a href="sponsorship.html">Sponsorships</a></li>
+                </ul>
+            </div>
+
+            <div class="dir-category">
+                <h2>Command</h2>
+                <ul class="links-list">
+                    <li><a href="dashboard.html">Control Panel <span class="status-tag">MOCKUP</span></a></li>
+                    <li><a href="support.html">Intelligence Base (Support)</a></li>
+                    <li><a href="contact.html">Comms Link (Contact)</a></li>
+                </ul>
+            </div>
+
+            <div class="dir-category">
+                <h2>Protocols</h2>
+                <ul class="links-list">
+                    <li><a href="legal.html">Legal Center</a></li>
+                    <li><a href="legal.html">Terms of Service</a></li>
+                    <li><a href="legal.html">Privacy Policy</a></li>
+                    <li><a href="legal.html">SLA</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            NEXORO HOSTING CORE | VERSION 1.0.24 | ALL SYSTEMS OPERATIONAL
+        </footer>
+    </div>
+
+</body>
+</html>

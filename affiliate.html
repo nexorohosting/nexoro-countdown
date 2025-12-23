@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Program | Nexoro Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-cyan: #00f3ff;
+            --accent-gold: #ffcc00;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 10%; background: rgba(0,0,0,0.9);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+        }
+        .logo { font-family: 'Orbitron'; font-weight: 900; color: #fff; text-decoration: none; font-size: 1.5rem; }
+        .logo span { color: var(--accent-cyan); }
+
+        /* --- HERO --- */
+        .affiliate-hero {
+            padding: 8rem 10% 4rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 0%, rgba(255, 204, 0, 0.05) 0%, transparent 70%);
+        }
+        .affiliate-hero h1 { font-family: 'Orbitron'; font-size: 3rem; margin-bottom: 1rem; }
+        .affiliate-hero p { color: var(--text-dim); max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem; }
+
+        /* --- TIER CARDS --- */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 10% 5rem;
+        }
+
+        .tier-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .tier-card:hover { border-color: var(--accent-gold); transform: translateY(-10px); }
+
+        .tier-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .percentage { font-family: 'Orbitron'; font-size: 2.5rem; color: var(--accent-gold); display: block; }
+        .tier-name { font-family: 'Orbitron'; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; font-size: 0.9rem; }
+
+        /* --- COMING SOON SECTION --- */
+        .waiting-list {
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            background: rgba(0, 243, 255, 0.03);
+            border: 1px dashed var(--accent-cyan);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .waiting-list h2 { font-family: 'Orbitron'; margin-bottom: 1rem; }
+        
+        .input-group { display: flex; gap: 10px; margin-top: 2rem; }
+        .input-group input { 
+            flex: 1; padding: 15px; background: #111; border: 1px solid #333; color: #fff; border-radius: 4px; 
+        }
+        .btn-join { 
+            padding: 15px 30px; background: var(--accent-cyan); color: #000; 
+            font-family: 'Orbitron'; font-weight: bold; border: none; border-radius: 4px; cursor: pointer;
+        }
+
+        /* --- ROADMAP --- */
+        .roadmap { padding: 5rem 10%; background: #080808; }
+        .roadmap-title { text-align: center; font-family: 'Orbitron'; margin-bottom: 4rem; }
+
+        .step { display: flex; gap: 2rem; margin-bottom: 3rem; align-items: flex-start; }
+        .step-num { 
+            background: var(--accent-cyan); color: #000; width: 40px; height: 40px; 
+            display: flex; align-items: center; justify-content: center; 
+            border-radius: 50%; font-weight: bold; flex-shrink: 0;
+            font-family: 'Orbitron';
+        }
+
+        @media (max-width: 768px) {
+            .input-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NEXORO<span>.</span></a>
+        <div style="display:flex; gap: 20px;">
+            <a href="index.html" style="color:white; text-decoration:none;">Home</a>
+            <a href="legal.html" style="color:white; text-decoration:none;">Legal</a>
+        </div>
+    </nav>
+
+    <header class="affiliate-hero">
+        <h1>Partner With Nexoro</h1>
+        <p>Earn recurring revenue by referring Bedrock players and creators to the most specialized hosting platform on the market.</p>
+    </header>
+
+    <div class="tier-grid">
+        <div class="tier-card">
+            <div class="tier-icon">🎖️</div>
+            <span class="percentage">10%</span>
+            <div class="tier-name">Sentry Partner</div>
+            <p style="color: var(--text-dim); font-size: 0.9rem;">Basic commission on every active referral subscription.</p>
+        </div>
+        <div class="tier-card" style="border-color: var(--accent-gold);">
+            <div class="tier-icon">👑</div>
+            <span class="percentage">20%</span>
+            <div class="tier-name">Elite Creator</div>
+            <p style="color: var(--text-dim); font-size: 0.9rem;">Increased rewards for YouTubers and Streamers with active audiences.</p>
+        </div>
+        <div class="tier-card">
+            <div class="tier-icon">🚀</div>
+            <span class="percentage">30%</span>
+            <div class="tier-name">Nexus Master</div>
+            <p style="color: var(--text-dim); font-size: 0.9rem;">Custom rates and dedicated support for high-volume networks.</p>
+        </div>
+    </div>
+
+    <section class="waiting-list">
+        <h2>Join the Waiting List</h2>
+        <p>We are currently hand-picking our first batch of partners. Drop your email to be the first to know when the portal opens.</p>
+        <div class="input-group">
+            <input type="email" placeholder="your@email.com">
+            <button class="btn-join">APPLY NOW</button>
+        </div>
+    </section>
+
+    <section class="roadmap">
+        <div class="roadmap-title"><h2>How It Works</h2></div>
+        
+        <div class="step">
+            <div class="step-num">1</div>
+            <div>
+                <h4 style="font-family: 'Orbitron'; color: var(--accent-cyan);">Apply for Program</h4>
+                <p>Submit your community or channel for review by our partnership team.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div>
+                <h4 style="font-family: 'Orbitron'; color: var(--accent-cyan);">Share Your Link</h4>
+                <p>Use your unique tracking link in your Discord server, YouTube descriptions, or website.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div>
+                <h4 style="font-family: 'Orbitron'; color: var(--accent-cyan);">Get Paid Monthly</h4>
+                <p>Withdraw your earnings directly to PayPal or your Nexoro account credit.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

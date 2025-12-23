@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Nexoro Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-cyan: #00f3ff;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.8; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 10%; background: rgba(0,0,0,0.9);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+        }
+        .logo { font-family: 'Orbitron'; font-weight: 900; color: #fff; text-decoration: none; font-size: 1.5rem; }
+        .logo span { color: var(--accent-cyan); }
+
+        /* --- ABOUT HERO --- */
+        .about-hero {
+            padding: 8rem 10% 4rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0, 243, 255, 0.05), transparent);
+        }
+        .about-hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .about-hero p { max-width: 800px; margin: 0 auto; color: var(--text-dim); font-size: 1.2rem; }
+
+        /* --- CONTENT SECTIONS --- */
+        .content-section { padding: 5rem 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        
+        .text-block h2 { font-family: 'Orbitron'; color: var(--accent-cyan); margin-bottom: 1.5rem; font-size: 1.8rem; }
+        .text-block p { margin-bottom: 1.5rem; color: var(--text-dim); }
+
+        .image-placeholder { 
+            background: var(--card-bg); 
+            border: 1px solid rgba(0, 243, 255, 0.2); 
+            height: 300px; 
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated "Grid" background for placeholders */
+        .image-placeholder::before {
+            content: "";
+            position: absolute; width: 200%; height: 200%;
+            background-image: linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            transform: rotate(15deg);
+        }
+
+        /* --- STATS SECTION --- */
+        .stats-bar {
+            background: var(--card-bg);
+            padding: 4rem 10%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .stat-item h3 { font-family: 'Orbitron'; font-size: 2.5rem; color: var(--accent-cyan); }
+        .stat-item p { text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--text-dim); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .content-section { grid-template-columns: 1fr; text-align: center; }
+            .about-hero { padding: 5rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NEXORO<span>.</span></a>
+        <div style="display:flex; gap: 20px;">
+            <a href="index.html" style="color:white; text-decoration:none; font-size: 0.9rem;">Home</a>
+            <a href="pricing.html" style="color:white; text-decoration:none; font-size: 0.9rem;">Pricing</a>
+        </div>
+    </nav>
+
+    <header class="about-hero">
+        <h1>Redefining Bedrock Hosting</h1>
+        <p>Nexoro was founded on a simple belief: Minecraft Bedrock players deserve the same professional infrastructure as Java Edition communities.</p>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat-item"><h3>99.9%</h3><p>Uptime Guarantee</p></div>
+        <div class="stat-item"><h3>< 20ms</h3><p>Average Latency</p></div>
+        <div class="stat-item"><h3>24/7</h3><p>Expert Support</p></div>
+    </div>
+
+    <section class="content-section">
+        <div class="text-block">
+            <h2>The Bedrock Specialist</h2>
+            <p>Most hosting providers treat Bedrock Edition as an afterthought. At Nexoro, it's our entire focus. We optimize our kernels and network routing specifically for the Bedrock protocol.</p>
+            <p>Whether you're playing on a high-end PC, a mobile device, or a console, Nexoro ensures your world stays synchronized and lag-free.</p>
+        </div>
+        <div class="image-placeholder">
+            <span style="z-index: 1; font-family: 'Orbitron'; color: var(--accent-cyan);">Specialized Network</span>
+        </div>
+    </section>
+
+    <section class="content-section" style="direction: rtl;">
+        <div class="text-block" style="direction: ltr;">
+            <h2>Security Through Isolation</h2>
+            <p>We leverage Docker containerization to provide every user with a private, virtualized environment. This means your resources are never "shared" or throttled by other users on the same node.</p>
+            <p>Our infrastructure is built to scale, protecting your community from DDoS attacks while maintaining peak performance during high player counts.</p>
+        </div>
+        <div class="image-placeholder">
+            <span style="z-index: 1; font-family: 'Orbitron'; color: var(--accent-cyan);">Docker Architecture</span>
+        </div>
+    </section>
+
+    <footer style="padding: 5rem 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: var(--text-dim); margin-bottom: 2rem;">Ready to build your community?</p>
+        <a href="pricing.html" style="background: var(--accent-cyan); color: #000; padding: 15px 40px; text-decoration: none; font-family: 'Orbitron'; font-weight: bold; border-radius: 4px;">GET STARTED TODAY</a>
+    </footer>
+
+</body>
+</html>
